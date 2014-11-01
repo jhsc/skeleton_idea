@@ -12,7 +12,7 @@ class Api::RecipesController < Api::BaseController
   end
 
   def destroy
-    respond_with :api, recipes.destroy
+    respond_with :api, recipe.destroy
   end
 
   private
@@ -21,7 +21,7 @@ class Api::RecipesController < Api::BaseController
     end
 
     def recipe
-      @recipes ||= Recipes.find(params[:id])
+      @recipe ||= recipes.find(params[:id])
     end
 
     def recipes_params
