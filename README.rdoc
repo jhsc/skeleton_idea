@@ -1,6 +1,5 @@
 == Rails + Angular + Postgres Stack
 ---
-==Stack 1 Applicaiton -> Receta 
 
 The stack conssist of.
 - Rails 4.16
