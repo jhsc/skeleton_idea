@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails', '~> 3.1.2.20141016'
+gem 'font-awesome-sass', '~> 4.2.0'
 # gem 'angular-rails-templates', '~> 0.1.3'
 
 # Front end depency manager
@@ -22,11 +23,9 @@ gem 'autoprefixer-rails', '~> 3.1.2.20141016'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-# Spring speeds up development by keeping your application running in the background.
-gem 'spring',        group: :development
 
 # Server
-# gem 'thin', '~> 1.6.3'
+gem 'thin', '~> 1.6.3'
 
 group :development, :test do
 	# test gems

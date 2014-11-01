@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html ng-app="mealbuilder">
+<html lang="en" ng-app="mealbuilderApp">
 	<head>
+		<meta charset="utf-8">
 	  <title>Meal Builder</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= favicon_link_tag 'stack.ico' %>
 	  <%= stylesheet_link_tag    'application', media: 'all' %>
 	  <%= javascript_include_tag 'application' %>
 	  <%= csrf_meta_tags %>
 	</head>
 
 	<body>
-		<div ng-view>
-	  	<%= yield %>
-		</div>
+		<!-- NAVIGATION -->
+		<nav class="navbar navbar-inverse">
+	    <div class="container">
+	      <div class="navbar-header">
+	        <a class="navbar-brand" href="#">mealbuilder.io</a>
+	      </div>
+
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a ui-sref="home"><i class="fa fa-home"></i> Home</a></li>
+	        <li><a ui-sref="about"><i class="fa fa-shield"></i> About</a></li>
+	        <li><a ui-sref="prices"><i class="fa fa-money"></i> Prices</a></li>
+	        <li><a ui-sref="contact"><i class="fa fa-comment"></i> Contact</a></li>
+	      </ul>
+	    </div>
+ 		</nav>
+
+		<!-- MAIN CONTENT -->
+	  <div class="container">
+	    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+	    <div ui-view></div>
+	  </div>
 	</body>
-	
+
 </html>

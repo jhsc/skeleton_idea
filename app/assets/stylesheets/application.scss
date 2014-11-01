@@ -4,6 +4,13 @@
  */
 
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// CSS overides
+.navbar { 
+	border-radius:0; 
+}
 
 form {
   padding: 15px;
