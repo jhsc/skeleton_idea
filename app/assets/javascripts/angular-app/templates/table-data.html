@@ -1,17 +1,17 @@
-<h2>Fine Scotches</h2>
+<h2>Fine Recipes</h2>
 
 <table class="table table-hover table-striped table-bordered">
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Cost</td>
+      <td>Title</td>
+      <td>Content</td>
     </tr>
   </thead>
   <tbody>
   
-    <tr ng-repeat="scotch in scotches">
-      <td>{{ scotch.name }}</td>
-      <td>${{ scotch.price }}</td>
+    <tr ng-repeat="recipe in recipes">
+      <td>{{ recipe.title }}</td>
+      <td>{{ recipe.content }}</td>
     </tr>
       
   </tbody>

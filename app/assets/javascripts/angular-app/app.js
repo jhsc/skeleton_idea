@@ -6,6 +6,8 @@ var APP = angular.module('mealbuilderApp', [
 
 APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
+  RestangularProvider.setBaseUrl("/api");
+  RestangularProvider.setDefaultRequestParams({format: "json"});
 
   $urlRouterProvider.otherwise('/home');
   
@@ -40,7 +42,7 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
             'columnOne@about': { template: 'Look I am a column!' },
             'columnTwo@about': { 
                 templateUrl: 'table-data.html',
-                controller: 'scotchController'
+                controller: 'recipeController'
             }
         }
         
@@ -56,23 +58,10 @@ APP.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
 }]);
 
 // let's define the scotch controller that we call up in the about state
-APP.controller('scotchController', function($scope) {
+APP.controller('recipeController', ['$scope','Restangular', function($scope, Restangular) {
+
+  Restangular.all("recipes").getList().then(function(recipes) {
+    $scope.recipes = recipes;
+  });
     
-  $scope.message = 'test';
- 
-  $scope.scotches = [
-    {
-      name: 'Macallan 12',
-      price: 50
-    },
-    {
-      name: 'Chivas Regal Royal Salute',
-      price: 10000
-    },
-    {
-      name: 'Glenfiddich 1937',
-      price: 20000
-    }
-  ];
-    
-});
+}]);

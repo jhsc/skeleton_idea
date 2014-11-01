@@ -1,14 +1,14 @@
 class Api::RecipesController < Api::BaseController
   def index
-    respond_with :api, recipess
-  end
-
-  def show
     respond_with :api, recipes
   end
 
+  def show
+    respond_with :api, recipe
+  end
+
   def create
-    respond_with :api, recipess.create(recipes_params)
+    respond_with :api, recipes.create(recipe_params)
   end
 
   def destroy
@@ -17,12 +17,12 @@ class Api::RecipesController < Api::BaseController
 
   private
 
-  def recipess
-    @recipess ||= Recipes.all
+  def recipes
+    @recipes ||= Recipe.all
   end
 
-  def recipes
-    @recipes ||= Recipess.find(params[:id])
+  def recipe
+    @recipes ||= Recipes.find(params[:id])
   end
 
   def recipes_params
