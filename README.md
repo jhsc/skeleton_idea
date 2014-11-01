@@ -1,5 +1,5 @@
 #Rails + Angular + Postgres Stack
----
+
 ####Stack 1 Applicaiton -> Receta 
 
 The following commands start the project Meal-Builder from scratch.
@@ -86,7 +86,7 @@ end
 ####Initialize git
 ```sh
 git init
-git remote add origin git@github.com:jhsantacruz/lunch_hub.git
+git remote add origin git@github.com:jhsantacruz/skeleton_idea.git
 git add .
 git commit -m 'Initial application commit'
 git status
